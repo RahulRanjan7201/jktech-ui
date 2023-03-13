@@ -1,9 +1,7 @@
 <p>
     <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
+      <span>Social Blogs</span>
+    <div *ngIf="isLoggedIn" >
      <span><a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page"> <button  mat-fab extended color="primary" class="dashboard" aria-label="Example icon-button with share icon">
         <mat-icon>
             dashboard
@@ -20,13 +18,16 @@
       </button>
     </a>
     </span>
+  </div>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button (click)="openLogin()" mat-fab extended color="primary" class="example-icon" aria-label="Example icon-button with share icon">
+      <button  *ngIf="!isLoggedIn"  (click)="openLogin()" mat-fab extended color="primary" class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>login</mat-icon>
         Login
       </button>
+      <button *ngIf="isLoggedIn" (click)="logout()" mat-fab extended color="primary" class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
     </mat-toolbar>
   </p>
+  

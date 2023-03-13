@@ -8,10 +8,10 @@
     <mat-card-content>
         <mat-form-field class="example-full-width">
             <mat-label>What's on your mind?</mat-label>
-            <textarea matInput placeholder="Ex. It is awesome day today..."></textarea>
+            <textarea [(ngModel)]="postDetails" matInput placeholder="Ex. It is awesome day today..."></textarea>
           </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>POST</button>
+      <button (click)="createPost()" mat-button>POST</button>
     </mat-card-actions>
   </mat-card>

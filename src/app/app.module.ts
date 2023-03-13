@@ -13,9 +13,9 @@ import { ShowPostComponent } from './show-post/show-post.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { HttpClientModule } from '@angular/common/http';
 import {
-  GoogleLoginProvider,
   FacebookLoginProvider
 } from '@abacritt/angularx-social-login';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +28,7 @@ import {
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
@@ -40,14 +41,8 @@ import {
         autoLogin: false,
         providers: [
           {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '814418751251-g8pq6bl9m3biuaiekuomrvh9d0eafnq2.apps.googleusercontent.com'
-            )
-          },
-          {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('clientId')
+            provider: new FacebookLoginProvider('762160288834233')
           }
         ],
         onError: (err) => {
